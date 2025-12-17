@@ -25,9 +25,19 @@ import locationIcon from "./assets/img/image.png";
 const navLinks = ["Home", "About Us", "Courses", "Pages", "Blog", "Contact"];
 
 const featureCards = [
-  { title: "Start Course", body: "Get the best class experience in valuable ways for kids and better bright future partner, knowledge." },
-  { title: "Expert Teachers", body: "Educate with expert teachers experience in valuable ways kids and better bright future partner, knowledge.", highlight: true },
-  { title: "Strategic Location", body: "Class area in the strategic education place with clean environment for kids partner, knowledge." },
+  {
+    title: "Start Course",
+    body: "Get the best class experience in valuable ways for kids and better bright future partner, knowledge.",
+  },
+  {
+    title: "Expert Teachers",
+    body: "Educate with expert teachers experience in valuable ways kids and better bright future partner, knowledge.",
+    highlight: true,
+  },
+  {
+    title: "Strategic Location",
+    body: "Class area in the strategic education place with clean environment for kids partner, knowledge.",
+  },
 ];
 
 const checklist = [
@@ -45,9 +55,21 @@ const metrics = [
 ];
 
 const testimonials = [
-  { name: "Eleanor Pena", role: "UI/UX Designer", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-  { name: "Devon Lane", role: "Product Manager", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
-  { name: "Courtney Henry", role: "Software Engineer", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." },
+  {
+    name: "Eleanor Pena",
+    role: "UI/UX Designer",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    name: "Devon Lane",
+    role: "Product Manager",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    name: "Courtney Henry",
+    role: "Software Engineer",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
 ];
 
 const instructors = [
@@ -58,10 +80,22 @@ const instructors = [
 ];
 
 const posts = [
-  { title: "Well-being: Our Love Nurturing Curriculum For Our Kids", img: post1 },
-  { title: "Well-being: Our Love Nurturing Curriculum For Our Kids", img: post2 },
-  { title: "Well-being: Our Love Nurturing Curriculum For Our Kids", img: post3 },
-  { title: "Well-being: Our Love Nurturing Curriculum For Our Kids", img: post4 },
+  {
+    title: "Well-being: Our Love Nurturing Curriculum For Our Kids",
+    img: post1,
+  },
+  {
+    title: "Well-being: Our Love Nurturing Curriculum For Our Kids",
+    img: post2,
+  },
+  {
+    title: "Well-being: Our Love Nurturing Curriculum For Our Kids",
+    img: post3,
+  },
+  {
+    title: "Well-being: Our Love Nurturing Curriculum For Our Kids",
+    img: post4,
+  },
 ];
 
 function App() {
@@ -98,7 +132,8 @@ function App() {
               The Best Place TO Learn And Play For Kids
             </h1>
             <p className={styles.heroSubtitle}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div className={styles.heroButtons}>
               <button className={styles.cta}>Browse Course</button>
@@ -133,7 +168,9 @@ function App() {
               return (
                 <div
                   key={card.title}
-                  className={`${styles.featureCard} ${card.highlight ? styles.highlight : ""}`}
+                  className={`${styles.featureCard} ${
+                    card.highlight ? styles.highlight : ""
+                  }`}
                 >
                   <div className={styles.featureIcon}>
                     <img
@@ -163,10 +200,13 @@ function App() {
             </div>
             <div className={styles.aboutText}>
               <h2>
-                It's Our Passion To Work With Children At <span className={styles.highlightWord}>Kindergarten.</span>
+                It's Our Passion To Work With Children At{" "}
+                <span className={styles.highlightWord}>Kindergarten.</span>
               </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam.
               </p>
               <ul className={styles.aboutList}>
                 {checklist.map((item) => (
@@ -179,14 +219,22 @@ function App() {
         </section>
 
         <section className={styles.videoBand}>
-          <img src={videoImg} alt="Kids learning" className={styles.videoFrame} />
+          <img
+            src={videoImg}
+            alt="Kids learning"
+            className={styles.videoFrame}
+          />
         </section>
 
         <section className={styles.metricsRow}>
           {metrics.map((m) => (
             <div key={m.label} className={styles.metric}>
               <div className={styles.metricIcon}>
-                <img src={metricIcon} alt="metric icon" className={styles.metricIconImg} />
+                <img
+                  src={metricIcon}
+                  alt="metric icon"
+                  className={styles.metricIconImg}
+                />
               </div>
               <div className={styles.metricValue}>{m.value}</div>
               <div>{m.label}</div>
@@ -199,7 +247,8 @@ function App() {
             <div className={styles.sectionHeader}>Why Choose Us</div>
             <h2>New Approach To Fun</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
             <div className={styles.tagRow}>
               {checklist.map((item) => (
@@ -221,7 +270,11 @@ function App() {
             {testimonials.map((t) => (
               <div key={t.name} className={styles.testimonialCard}>
                 <div className={styles.ratingRow}>
-                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
+                  <span>★</span>
                 </div>
                 <p>{t.text}</p>
                 <strong>{t.name}</strong>
@@ -296,10 +349,14 @@ function App() {
               <span className={styles.brandName}>Edunity</span>
             </div>
             <p>
-              Interdum velit laoreet id donec ultrices tincidunt arcu. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu.
+              Interdum velit laoreet id donec ultrices tincidunt arcu. Tincidunt
+              tortor aliquam nulla facilisi cras fermentum odio eu.
             </p>
             <div className={styles.socialRow}>
-              <span></span><span></span><span></span><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
           </div>
           <div className={styles.footerColumn}>
@@ -325,13 +382,18 @@ function App() {
           </div>
           <div className={styles.footerColumn}>
             <h4>Subscribe</h4>
-            <form className={styles.subscribeForm} onSubmit={(e) => e.preventDefault()}>
+            <form
+              className={styles.subscribeForm}
+              onSubmit={(e) => e.preventDefault()}
+            >
               <input type="email" placeholder="Enter your email" />
               <button className={styles.cta}>Subscribe Now</button>
             </form>
           </div>
         </div>
-        <div className={styles.footerBottom}>Copyright © 2025 edunity | All Right Reserved.</div>
+        <div className={styles.footerBottom}>
+          Copyright © 2025 edunity | All Right Reserved.
+        </div>
       </footer>
     </div>
   );
