@@ -1,0 +1,27 @@
+.about {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  padding: 100px 10%;
+}
+
+.about-images {
+  position: relative;
+}
+
+.img-small {
+  width: 180px;
+  border-radius: 20px;
+}
+
+.img-large {
+  width: 260px;
+  border-radius: 30px;
+  position: absolute;
+  top: 120px;
+  left: 120px;
+}
+
+.about-text h2 span {
+  color: #f59e0b;
+}

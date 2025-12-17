@@ -1,0 +1,17 @@
+.features {
+  display: flex;
+  gap: 30px;
+  padding: 60px 80px;
+}
+
+.card {
+  flex: 1;
+  padding: 40px;
+  border-radius: 20px;
+  background: #f3f4f6;
+}
+
+.highlight {
+  background: #14b8a6;
+  color: white;
+}
