@@ -2,11 +2,13 @@ import styles from "./css/home4.module.css";
 
 import boy from "./assets/img/boycheccks.svg";
 import gradGirl from "./assets/img/girl-apple.svg";
+import girlGlasses from "./assets/img/girl-glasses.svg";
 import happyGirl from "./assets/img/Girl.jpg";
 import smallBoy from "./assets/img/child-1.svg";
 import videoImg from "./assets/img/video.jpg";
 import smile from "./assets/img/smiling.jpg";
 import classImg from "./assets/img/CLass.jpg";
+import metricIcon from "./assets/img/icon.png";
 import i1 from "./assets/img/I1.jpg";
 import i2 from "./assets/img/I2.jpg";
 import i3 from "./assets/img/I3.jpg";
@@ -16,6 +18,9 @@ import post2 from "./assets/img/Girl.jpg";
 import post3 from "./assets/img/CLass.jpg";
 import post4 from "./assets/img/smiling.jpg";
 import logo from "./assets/img/logo1.png";
+import startIcon from "./assets/img/image.png";
+import teacherIcon from "./assets/img/image.png";
+import locationIcon from "./assets/img/image.png";
 
 const navLinks = ["Home", "About Us", "Courses", "Pages", "Blog", "Contact"];
 
@@ -69,7 +74,8 @@ function App() {
 
       <header className={styles.navbar}>
         <div className={styles.brand}>
-          <img src={logo} alt="edunity logo" />
+          <img src={logo} alt="Edunity logo" />
+          <span className={styles.brandName}>Edunity</span>
         </div>
         <ul className={styles.navLinks}>
           {navLinks.map((item) => (
@@ -107,7 +113,7 @@ function App() {
           <div className={styles.heroVisuals}>
             <div className={styles.heroCard}>
               <div className={styles.heroBubble}>5.8k</div>
-              <img src={boy} alt="Happy student" />
+              <img src={smallBoy} alt="Child 1" />
             </div>
             <div className={`${styles.heroCard} ${styles.secondary}`}>
               <img src={gradGirl} alt="Graduate student" />
@@ -117,15 +123,30 @@ function App() {
 
         <section className={styles.section}>
           <div className={styles.cardsRow}>
-            {featureCards.map((card) => (
-              <div
-                key={card.title}
-                className={`${styles.featureCard} ${card.highlight ? styles.highlight : ""}`}
-              >
-                <strong>{card.title}</strong>
-                <p>{card.body}</p>
-              </div>
-            ))}
+            {featureCards.map((card) => {
+              const iconSrc =
+                card.title === "Start Course"
+                  ? startIcon
+                  : card.title === "Expert Teachers"
+                  ? teacherIcon
+                  : locationIcon;
+              return (
+                <div
+                  key={card.title}
+                  className={`${styles.featureCard} ${card.highlight ? styles.highlight : ""}`}
+                >
+                  <div className={styles.featureIcon}>
+                    <img
+                      src={iconSrc}
+                      alt={`${card.title} icon`}
+                      className={styles.featureIconImg}
+                    />
+                  </div>
+                  <strong>{card.title}</strong>
+                  <p>{card.body}</p>
+                </div>
+              );
+            })}
           </div>
         </section>
 
@@ -133,8 +154,12 @@ function App() {
           <div className={styles.sectionHeader}>About Us</div>
           <div className={styles.twoCol}>
             <div className={styles.aboutImages}>
-              <img src={smallBoy} alt="Happy student" />
-              <img src={happyGirl} alt="Student smiling" />
+              <div className={styles.aboutLeft}>
+                <img src={boy} alt="Boycheccks" />
+              </div>
+              <div className={styles.aboutRight}>
+                <img src={girlGlasses} alt="Girl with glasses" />
+              </div>
             </div>
             <div className={styles.aboutText}>
               <h2>
@@ -160,6 +185,9 @@ function App() {
         <section className={styles.metricsRow}>
           {metrics.map((m) => (
             <div key={m.label} className={styles.metric}>
+              <div className={styles.metricIcon}>
+                <img src={metricIcon} alt="metric icon" className={styles.metricIconImg} />
+              </div>
               <div className={styles.metricValue}>{m.value}</div>
               <div>{m.label}</div>
             </div>
@@ -182,7 +210,6 @@ function App() {
             </div>
           </div>
           <div className={styles.gallery}>
-            <img src={classImg} alt="Class" />
             <img src={smile} alt="Happy child" />
           </div>
         </section>
@@ -193,6 +220,9 @@ function App() {
           <div className={styles.testimonialRow}>
             {testimonials.map((t) => (
               <div key={t.name} className={styles.testimonialCard}>
+                <div className={styles.ratingRow}>
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
                 <p>{t.text}</p>
                 <strong>{t.name}</strong>
                 <div>{t.role}</div>
@@ -214,6 +244,8 @@ function App() {
           </div>
         </section>
 
+        {/* Gallery moved to footer */}
+
         <section className={styles.posts}>
           <div className={styles.sectionHeader}>Explore Newsletter</div>
           <h2>Most Popular Post.</h2>
@@ -232,25 +264,71 @@ function App() {
         </section>
       </main>
 
+      <div className={styles.footerTop}>
+        <div className={styles.footerTopItem}>
+          <span className={styles.iconCircle}>📍</span>
+          <div>
+            <small>Address:</small>
+            <div>1295 Boggess Street</div>
+          </div>
+        </div>
+        <div className={styles.footerTopItem}>
+          <span className={styles.iconCircle}>☎</span>
+          <div>
+            <small>Phone:</small>
+            <div>(00) 875 784 568</div>
+          </div>
+        </div>
+        <div className={styles.footerTopItem}>
+          <span className={styles.iconCircle}>✉</span>
+          <div>
+            <small>Email:</small>
+            <div>info@gmail.com</div>
+          </div>
+        </div>
+      </div>
+
       <footer className={styles.footer}>
         <div className={styles.footerContent}>
-          <div>
-            <h3>edunity</h3>
+          <div className={styles.footerColumn}>
+            <div className={styles.brand}>
+              <img src={logo} alt="Edunity" />
+              <span className={styles.brandName}>Edunity</span>
+            </div>
             <p>
-              We create advanced lessons of curriculum for kids to have better future and smart next generation.
+              Interdum velit laoreet id donec ultrices tincidunt arcu. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu.
             </p>
+            <div className={styles.socialRow}>
+              <span></span><span></span><span></span><span></span>
+            </div>
           </div>
-          <div>
-            <h4>Address</h4>
-            <p>1295 Bagossy Street</p>
+          <div className={styles.footerColumn}>
+            <h4>Our Services:</h4>
+            <ul className={styles.linkList}>
+              <li>Web Development</li>
+              <li>UI/UX Design</li>
+              <li>Management</li>
+              <li>Digital Marketing</li>
+              <li>Blog News</li>
+            </ul>
           </div>
-          <div>
-            <h4>Phone</h4>
-            <p>(00) 875 784 568</p>
+          <div className={styles.footerColumn}>
+            <h4>Gallery</h4>
+            <div className={styles.footerGallery}>
+              <img src={classImg} alt="Gallery 1" />
+              <img src={smile} alt="Gallery 2" />
+              <img src={happyGirl} alt="Gallery 3" />
+              <img src={i1} alt="Gallery 4" />
+              <img src={i2} alt="Gallery 5" />
+              <img src={i3} alt="Gallery 6" />
+            </div>
           </div>
-          <div>
-            <h4>Email</h4>
-            <p>info@gmail.com</p>
+          <div className={styles.footerColumn}>
+            <h4>Subscribe</h4>
+            <form className={styles.subscribeForm} onSubmit={(e) => e.preventDefault()}>
+              <input type="email" placeholder="Enter your email" />
+              <button className={styles.cta}>Subscribe Now</button>
+            </form>
           </div>
         </div>
         <div className={styles.footerBottom}>Copyright © 2025 edunity | All Right Reserved.</div>

@@ -44,8 +44,15 @@
 }
 
 .brand img {
-  width: 120px;
-  height: auto;
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+.brandName {
+  font-weight: 800;
+  font-size: 18px;
+  color: #1f274b;
+  letter-spacing: -0.02em;
 }
 
 .navLinks {
@@ -120,7 +127,9 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 28px;
   align-items: center;
+  position: relative;
 }
+
 
 .heroText {
   display: grid;
@@ -237,11 +246,30 @@
   display: grid;
   gap: 8px;
 }
+.featureIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #eaf7ff;
+  color: #0db2a6;
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+.featureIconImg {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
 
 .featureCard.highlight {
   background: #0db2a6;
   color: #fff;
   border-color: #0db2a6;
+}
+.featureCard.highlight .featureIcon {
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .section {
@@ -281,22 +309,53 @@
   box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
 }
 
-.aboutText h2 {
-  margin: 8px 0 12px;
-  font-size: clamp(24px, 3vw, 32px);
+.aboutLeftImg {
+  width: 160px;
+  height: 220px;
+  border-radius: 32px;
+  object-fit: contain;
+  justify-self: start;
+  align-self: end;
+  background: #fff;
 }
 
-.highlightWord {
-  color: #f59e0b;
+.aboutRightImg {
+  width: 220px;
+  height: 300px;
+  border-radius: 140px;
+  object-fit: contain;
+  justify-self: start;
+  background: #e9eef7;
 }
 
-.aboutList {
-  list-style: none;
-  margin: 12px 0 18px;
-  padding: 0;
-  display: grid;
-  gap: 8px;
-  color: #4b5568;
+.aboutLeft {
+  width: 160px;
+  height: 220px;
+  border-radius: 32px;
+  overflow: hidden;
+  justify-self: start;
+  align-self: end;
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+.aboutLeft img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.aboutRight {
+  width: 240px;
+  height: 320px;
+  border-radius: 140px;
+  overflow: hidden;
+  justify-self: start;
+  background: #e9eef7;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+.aboutRight img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .aboutList li::before {
@@ -335,6 +394,22 @@
   border: 1px solid #eef1f5;
   border-radius: 18px;
   box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.metricIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 8px;
+  background: #eaf7ff;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+}
+.metricIconImg {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
 }
 
 .metricValue {
@@ -379,6 +454,14 @@
 .testimonials {
   display: grid;
   gap: 16px;
+}
+
+.ratingRow {
+  display: inline-flex;
+  gap: 4px;
+  color: #f59e0b;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .testimonialRow {
@@ -426,6 +509,24 @@
   gap: 14px;
 }
 
+.gallerySection {
+  display: grid;
+  gap: 14px;
+}
+.footerGallery {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-auto-rows: 70px;
+  gap: 10px;
+}
+.footerGallery img {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
 .postGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -455,8 +556,36 @@
 .footer {
   background: #0f172a;
   color: #c8d2f2;
-  margin-top: 60px;
+  margin-top: 0;
   padding: 40px 20px 30px;
+}
+
+.footerTop {
+  background: #121a2f;
+  color: #c8d2f2;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1px;
+  border-top: 1px solid #1b2442;
+  border-bottom: 1px solid #1b2442;
+}
+.footerTopItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #10182c;
+  border-right: 1px solid #1b2442;
+}
+.iconCircle {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #0db2a6;
+  color: #fff;
+  font-weight: 800;
 }
 
 .footerContent {
@@ -465,6 +594,43 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+}
+.footerColumn p {
+  margin: 0;
+}
+.socialRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.socialRow span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #0db2a6;
+  color: #fff;
+  font-size: 12px;
+}
+.linkList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.subscribeForm {
+  display: grid;
+  gap: 10px;
+}
+.subscribeForm input {
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  border: 1px solid #223055;
+  background: #0f172a;
+  color: #c8d2f2;
 }
 
 .footer h4,
